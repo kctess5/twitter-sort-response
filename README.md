@@ -22,9 +22,17 @@ Or clone from the Git repository:
 
 Rename `example.settings.py` to `settings.py` and fill the required attributes.
 
+If you want to use notifications, then run
+
+```shell
+[sudo] gem install terminal-notifier
+```
+
+And use the --notify flag
+
 Usage
 -----
 
 ```shell
-$ python main.py
+$ python main.py [--notify]
 ```
