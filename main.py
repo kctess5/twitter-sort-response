@@ -6,6 +6,9 @@ auth.set_access_token(settings.ACCESS_TOKEN, settings.TOKEN_SECRET)
 api = tweepy.API(auth)
 
 def respond(tweet, text):
+	if text == "":
+		print "Something funky with this tweet:", tweet.text
+		return
 	response = '@' + tweet.user.screen_name + ' ' + text
 	try:
 		api.update_status(response, tweet.id)
@@ -25,7 +28,7 @@ def replyTo(tweet):
 	
 	respond(tweet, text)
 
-mostRecent = 555425749461925889
+mostRecent = 555535840063930368
 
 while True:
 	if mostRecent == None:
